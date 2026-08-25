@@ -22,6 +22,7 @@ string(REGEX MATCH "^[^-]+" HOST_CPU ${HOST_ARCH})
 
 execute_process(COMMAND meson --version OUTPUT_VARIABLE MESON_VERSION OUTPUT_STRIP_TRAILING_WHITESPACE)
 string(STRIP "${MESON_VERSION}" MESON_VERSION)
+message(STATUS "Detected meson version: '${MESON_VERSION}'")
 if(NOT MESON_VERSION GREATER_EQUAL 1.3)
     message(FATAL_ERROR "Meson 1.3.0 or greater is required. Install it with pip instead.")
 endif()
